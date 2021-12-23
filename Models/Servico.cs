@@ -20,6 +20,7 @@ namespace ProvaGelaBahia.Models
         [Display(Name = "Status")]
         public string status { get; set; }
 
+        [Display(Name = "Id do Serviço")]
         [ForeignKey("Tiposervico")]
         public int tipoServico_idtiposervico { get; set; }
 

@@ -90,7 +90,56 @@ namespace ProvaGelaBahia.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdFuncionario,Nome_Funcionario,Cpf_Funcionario,Salario,Comissao,status,Servicos_IdServicos")] Funcionario funcionario)
+        public async Task<IActionResult> Edit(int id, [Bind("IdFuncionario,Nome_Funcionario,Cpf_Funcionario,Salario,Comissao,status,servicos_idservicos")] Funcionario funcionario)
+        {
+            if (id != funcionario.IdFuncionario)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(funcionario);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!FuncionarioExists(funcionario.IdFuncionario))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(funcionario);
+        }
+
+        // GET: Funcionarios/Atividade/5
+        public async Task<IActionResult> Atividade(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var funcionario = await _context.Funcionarios.FindAsync(id);
+            if (funcionario == null)
+            {
+                return NotFound();
+            }
+            return View(funcionario);
+        }
+
+        //POST: Funcionarios/Atividade/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Atividade(int id, [Bind("IdFuncionario,Nome_Funcionario,Cpf_Funcionario,Salario,Comissao,status,servicos_idservicos")] Funcionario funcionario)
         {
             if (id != funcionario.IdFuncionario)
             {

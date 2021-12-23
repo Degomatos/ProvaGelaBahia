@@ -26,6 +26,6 @@ namespace ProvaGelaBahia.Models
         public string status { get; set; }
 
         [Display(Name = "Id do Serviço")]
-        public int Servicos_IdServicos { get; set; }
+        public int servicos_idservicos { get; set; }
     }
 }

@@ -324,3 +324,4 @@ C:\Users\degot\Documents\AtividadesSenai\Desenvolvimento de Sistemas 2\ProvaGela
 C:\Users\degot\Documents\AtividadesSenai\Desenvolvimento de Sistemas 2\ProvaGelaBahia\ProvaGelaBahia\obj\Debug\netcoreapp3.1\ProvaGelaBahia.dll
 C:\Users\degot\Documents\AtividadesSenai\Desenvolvimento de Sistemas 2\ProvaGelaBahia\ProvaGelaBahia\obj\Debug\netcoreapp3.1\ProvaGelaBahia.pdb
 C:\Users\degot\Documents\AtividadesSenai\Desenvolvimento de Sistemas 2\ProvaGelaBahia\ProvaGelaBahia\obj\Debug\netcoreapp3.1\ProvaGelaBahia.genruntimeconfig.cache
+C:\Users\degot\Documents\AtividadesSenai\Desenvolvimento de Sistemas 2\ProvaGelaBahia\ProvaGelaBahia\obj\Debug\netcoreapp3.1\Razor\Views\Funcionarios\Atividade.cshtml.g.cs
