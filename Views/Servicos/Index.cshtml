@@ -1,0 +1,59 @@
+@model IEnumerable<ProvaGelaBahia.Models.Servico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastro de Servicos</h1>
+
+<p>
+    <a asp-action="Create">Cadastrar Novo Serviço</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.data_hora_servico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valor_Servico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipoServico_idtiposervico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.detalhe_servico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_hora_servico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valor_Servico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoServico_idtiposervico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.detalhe_servico)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdServicos">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdServicos">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdServicos">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+@model IEnumerable<ProvaGelaBahia.Models.TipoServico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tipos de Serviços Prestados</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoServico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome_Servico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome_Servico)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdTipoServico">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdTipoServico">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdTipoServico">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
